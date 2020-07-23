@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
+using banklytask.identityprovider.Extensions;
+using banklytask.identityprovider.Filters;
+using banklytask.identityprovider.Models;
+using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.EntityFramework.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,7 +37,15 @@ namespace banklytask.identityprovider
         {
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             IdentityModelEventSource.ShowPII = true;
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add(typeof(ValidateModelStateActionFilter));
+            });
+            
+            services.AddCors();
+
+            services.AddDbContextWithIdentity(Configuration);
+            services.AddIdentityServerConfiguration(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,16 +56,21 @@ namespace banklytask.identityprovider
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            app.UseConfigureSecurityHeaders(env);
 
             app.UseRouting();
-
+            app.UseIdentityServer();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            app.InitializeDbTestData();
+            
+            app.UseWelcomePage();
         }
     }
 }
