@@ -1,5 +1,11 @@
-bin/
+src/banklytask.identityprovider/bin/
+src/banklytask.identityprovider/obj/
 obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+
+src/banklytask.identityprovider.test/bin/
+src/banklytask.identityprovider.test/obj/
+
+src/.idea/
