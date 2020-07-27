@@ -59,7 +59,7 @@ namespace IdentityProvider.BusinessDomain.Services.Authentication
                 EmailConfirmed = true,
                 FirstName = firstname,
                 LastName = lastname,
-                CreatedTime = DateTime.UtcNow
+                CreatedTime = DateTime.UtcNow,
             };
 
             await _userManager.CreateAsync(identityUser, password);
@@ -113,7 +113,7 @@ namespace IdentityProvider.BusinessDomain.Services.Authentication
 
         public async Task<bool> UserWithEmailExist(string email)
         {
-            return await _userManager.Users.AnyAsync(c => c.Email.Equals(email, StringComparison.OrdinalIgnoreCase)); 
+            return await _userManager.Users.AnyAsync(c => c.Email.ToLower() == email.ToLower()); 
         }
     }
 }

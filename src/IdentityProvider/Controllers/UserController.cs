@@ -2,8 +2,8 @@ using System;
 using System.Threading.Tasks;
 using IdentityProvider.BusinessDomain.Services;
 using IdentityProvider.BusinessDomain.Services.Authentication;
+using IdentityProvider.BusinessDomain.ViewModel;
 using IdentityProvider.DataAccess.Entities.Enums;
-using IdentityProvider.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,25 +12,25 @@ namespace IdentityProvider.Controllers
     [Route("api/users")]
     public class UserController : Controller
     {
-        private IUserRepository _userRepository;
-        public UserController(IUserRepository userRepository)
-        {
-            _userRepository = userRepository;
-        }
+        private IUserService _userService;
 
+        public UserController(IUserService userService)
+        {
+            _userService = userService;
+        }
+        
         [HttpPost]
-        public async Task<IActionResult> PostUser(RegisterViewModel model)
+        public async Task<IActionResult> PostUser([FromBody] RegisterUserViewModel model)
         {
             try
             {
-                var emailExist = await _userRepository.UserWithEmailExist(model.Email);
-                if (emailExist)
+                var response = await _userService.CreateUser(model);
+                if (!response.IsSuccessful)
                 {
-                    return BadRequest(Constants.USER_EMAIL_EXIST.Replace("{email}", model.Email));
+                    return BadRequest(response.Message);
                 }
 
-                await _userRepository.CreateUser(model.FirstName, model.LastName, model.Email, model.Password, RolesConstants.Enum.User);
-                return Ok();
+                return Ok(response.Message);
             }
             catch (Exception e)
             {
@@ -39,10 +39,10 @@ namespace IdentityProvider.Controllers
         }
         
         
-        [HttpPost("/admin")]
-        public IActionResult PostAdmin(RegisterViewModel model)
-        {
-            return Ok();
-        }
+        // [HttpPost("/admin")]
+        // public IActionResult PostAdmin(RegisterViewModel model)
+        // {
+        //     return Ok();
+        // }
     }
 }

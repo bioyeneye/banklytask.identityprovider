@@ -30,7 +30,8 @@ namespace IdentityProvider.BusinessDomain.Services.Authentication
                     if (userData.Item1 != null)
                     {
                         var claims = GetUserClaims(userData.Item1, userData.Item2);
-                        context.IssuedClaims = claims.Where(x => context.RequestedClaimTypes.Contains(x.Type)).ToList();
+                        var identityClaim = claims.Where(x => context.RequestedClaimTypes.Contains(x.Type)).ToList();
+                        context.IssuedClaims = identityClaim;
                     }
                 }
                 else

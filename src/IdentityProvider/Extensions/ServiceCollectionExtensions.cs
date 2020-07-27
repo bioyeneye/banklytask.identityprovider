@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using IdentityProvider.BusinessDomain.ServiceModels;
 using IdentityProvider.BusinessDomain.Services.Authentication;
 using IdentityProvider.DataAccess;
 using IdentityProvider.DataAccess.Contexts;
@@ -16,20 +17,22 @@ namespace IdentityProvider.Extensions
     {
         public static IServiceCollection AddDbContextWithIdentity(this IServiceCollection services, IConfiguration configuration)
         {
+            var identityOptions = configuration.GetSection(nameof(IdentityProviderOptions)).Get<IdentityProviderOptions>();
+
             var connectionString = configuration.GetConnectionString(nameof(ApplicationDbContext));
             var migrationsAssembly = typeof(ApplicationDbContext).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddDbContext<ApplicationDbContext>(builder => builder.UseSqlServer(connectionString, sqlOptions => sqlOptions.MigrationsAssembly(migrationsAssembly)))
                 .AddIdentity<ApplicationIdentityUser, IdentityRole>(options =>
                 {
-                    options.Password.RequireDigit = true;
-                    options.Password.RequiredLength = 8;
-                    options.Password.RequireNonAlphanumeric = false;
-                    options.Password.RequireUppercase = true;
-                    options.Password.RequireLowercase = false;
-                    options.Lockout.AllowedForNewUsers = true;
-                    options.Lockout.MaxFailedAccessAttempts = 3;
-                    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(3);
+                    options.Password.RequireDigit = identityOptions.IdentityPasswordOptions.RequireDigit;
+                    options.Password.RequiredLength = identityOptions.IdentityPasswordOptions.RequiredLength;
+                    options.Password.RequireNonAlphanumeric = identityOptions.IdentityPasswordOptions.RequireNonAlphanumeric;
+                    options.Password.RequireUppercase = identityOptions.IdentityPasswordOptions.RequireUppercase;
+                    options.Password.RequireLowercase = identityOptions.IdentityPasswordOptions.RequireLowercase;
+                    options.Lockout.AllowedForNewUsers = identityOptions.IdentityLockoutOptions.AllowedForNewUsers;
+                    options.Lockout.MaxFailedAccessAttempts = identityOptions.IdentityLockoutOptions.MaxFailedAccessAttempts;
+                    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(identityOptions.IdentityLockoutOptions.DefaultLockoutTime);
                 })
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -88,6 +91,7 @@ namespace IdentityProvider.Extensions
         public static IIdentityServerBuilder AddCustomUserStore(this IIdentityServerBuilder builder)
         {
             builder.Services.AddTransient<IUserRepository, UserRepository>();
+            builder.Services.AddTransient<IUserService, UserService>();
             builder.AddProfileService<CustomProfileService>();
             builder.AddResourceOwnerValidator<CustomResourceOwnerPasswordValidator>();
             return builder;

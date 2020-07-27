@@ -26,6 +26,7 @@ namespace IdentityProvider
             IdentityModelEventSource.ShowPII = true;
             services.AddControllers(options =>
             {
+                //options.Filters.Add(new RequestLogAttribute());
                 options.Filters.Add(typeof(ValidateModelStateActionFilter));
             });
             

@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace IdentityProvider.ViewModel
+namespace IdentityProvider.BusinessDomain.ViewModel
 {
-    public class RegisterViewModel
+    public class RegisterUserViewModel
     {
         [Required]
         [EmailAddress]

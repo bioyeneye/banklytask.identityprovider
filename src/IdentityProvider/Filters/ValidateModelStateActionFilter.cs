@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,9 +16,14 @@ namespace IdentityProvider.Filters
             //Check if ModelState is valid.
             if (!context.ModelState.IsValid)
             {
-                var errors = context.ModelState.SelectMany(x => x.Value.Errors)
-                    .Select(x => x.ErrorMessage).ToList();
-                context.Result = new BadRequestObjectResult(new ApiError(StatusCodes.Status400BadRequest, "Model validation error", "Model input is not correct", errors));
+                var errors = context.ModelState.Keys.Where(i => context.ModelState[i].Errors.Count > 0)
+                    .Select(k => new ValidationErrorModel
+                    {
+                        Field = k,
+                        Message = context.ModelState[k].Errors.First().ErrorMessage
+                    }).ToList();
+
+                context.Result = new BadRequestObjectResult(new ApiError<ValidationErrorModel>(StatusCodes.Status400BadRequest, "Your request parameters didn't validate", "Model input is not correct", errors));
             }
             else
             {
@@ -26,27 +32,36 @@ namespace IdentityProvider.Filters
             }
         }
     }
-    
-    public class ApiError
+
+    public class ApiError<T>
     {
-        public int StatusCode { get; private set; }
-        public string StatusDescription { get; private set; }
-
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public string Message { get; private set; }
-        public List<string> Errors { get; private set; }
-
         public ApiError(int statusCode, string statusDescription)
         {
-            this.StatusCode = statusCode;
-            this.StatusDescription = statusDescription;
+            Id = Guid.NewGuid().ToString();
+            StatusCode = statusCode;
+            StatusDescription = statusDescription;
+            ErrorTime = DateTime.UtcNow;
         }
 
-        public ApiError(int statusCode, string statusDescription, string message, List<string> errors)
+        public ApiError(int statusCode, string statusDescription, string message, List<T> errors)
             : this(statusCode, statusDescription)
         {
-            this.Message = message;
-            this.Errors = errors;
+            Message = message;
+            Errors = errors;
         }
+
+        public string Id { get; set; }
+        public int StatusCode { get; }
+        public string StatusDescription { get; }
+        public DateTime ErrorTime { get; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string Message { get; }
+        public List<T> Errors { get; }
+    }
+
+    public class ValidationErrorModel
+    {
+        public string Field { get; set; }
+        public string Message { get; set; }
     }
 }

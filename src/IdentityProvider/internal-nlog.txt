@@ -1,0 +1,124 @@
+2020-07-27 10:33:44.0524 Info Message Template Auto Format enabled
+2020-07-27 10:33:44.0837 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 10:33:44.2210 Info Adding target FileTarget(Name=allfile)
+2020-07-27 10:33:44.2674 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 10:33:44.4321 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 10:38:03.7343 Info Message Template Auto Format enabled
+2020-07-27 10:38:03.7675 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 10:38:03.8440 Info Adding target FileTarget(Name=allfile)
+2020-07-27 10:38:03.8616 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 10:38:04.0598 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 10:38:56.2238 Info Message Template Auto Format enabled
+2020-07-27 10:38:56.2900 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 10:38:56.4113 Info Adding target FileTarget(Name=allfile)
+2020-07-27 10:38:56.4923 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 10:38:56.7878 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 10:39:29.5131 Info Message Template Auto Format enabled
+2020-07-27 10:39:29.5577 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 10:39:29.6399 Info Adding target FileTarget(Name=allfile)
+2020-07-27 10:39:29.6633 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 10:39:29.8015 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 10:47:15.3167 Info Message Template Auto Format enabled
+2020-07-27 10:47:15.3548 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 10:47:15.4555 Info Adding target FileTarget(Name=allfile)
+2020-07-27 10:47:15.4570 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 10:47:15.6020 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=50, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 10:49:41.9564 Warn Exception in layout renderer. Exception: System.InvalidOperationException: Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.FileBufferingReadStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.StreamReader.ReadBuffer()
+   at System.IO.StreamReader.ReadToEnd()
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.BodyToString(Stream body)
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.DoAppend(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.Web.LayoutRenderers.AspNetLayoutRendererBase.Append(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.LayoutRenderers.LayoutRenderer.RenderAppendBuilder(LogEventInfo logEvent, StringBuilder builder)
+2020-07-27 10:49:41.9920 Warn Exception in layout renderer. Exception: System.InvalidOperationException: Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.FileBufferingReadStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.StreamReader.ReadBuffer()
+   at System.IO.StreamReader.ReadToEnd()
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.BodyToString(Stream body)
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.DoAppend(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.Web.LayoutRenderers.AspNetLayoutRendererBase.Append(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.LayoutRenderers.LayoutRenderer.RenderAppendBuilder(LogEventInfo logEvent, StringBuilder builder)
+2020-07-27 10:58:23.8135 Info Message Template Auto Format enabled
+2020-07-27 10:58:23.8451 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 10:58:23.9483 Info Adding target FileTarget(Name=allfile)
+2020-07-27 10:58:23.9498 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 10:58:24.1345 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=50, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 10:58:49.1270 Warn Exception in layout renderer. Exception: System.InvalidOperationException: Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.FileBufferingReadStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.StreamReader.ReadBuffer()
+   at System.IO.StreamReader.ReadToEnd()
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.BodyToString(Stream body)
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.DoAppend(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.Web.LayoutRenderers.AspNetLayoutRendererBase.Append(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.LayoutRenderers.LayoutRenderer.RenderAppendBuilder(LogEventInfo logEvent, StringBuilder builder)
+2020-07-27 10:58:49.1666 Warn Exception in layout renderer. Exception: System.InvalidOperationException: Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.FileBufferingReadStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.StreamReader.ReadBuffer()
+   at System.IO.StreamReader.ReadToEnd()
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.BodyToString(Stream body)
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.DoAppend(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.Web.LayoutRenderers.AspNetLayoutRendererBase.Append(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.LayoutRenderers.LayoutRenderer.RenderAppendBuilder(LogEventInfo logEvent, StringBuilder builder)
+2020-07-27 10:58:50.6768 Warn Exception in layout renderer. Exception: System.InvalidOperationException: Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.FileBufferingReadStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.StreamReader.ReadBuffer()
+   at System.IO.StreamReader.ReadToEnd()
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.BodyToString(Stream body)
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.DoAppend(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.Web.LayoutRenderers.AspNetLayoutRendererBase.Append(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.LayoutRenderers.LayoutRenderer.RenderAppendBuilder(LogEventInfo logEvent, StringBuilder builder)
+2020-07-27 10:58:50.6823 Warn Exception in layout renderer. Exception: System.InvalidOperationException: Synchronous operations are disallowed. Call ReadAsync or set AllowSynchronousIO to true instead.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at Microsoft.AspNetCore.WebUtilities.FileBufferingReadStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.StreamReader.ReadBuffer()
+   at System.IO.StreamReader.ReadToEnd()
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.BodyToString(Stream body)
+   at NLog.Web.LayoutRenderers.AspNetRequestPostedBody.DoAppend(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.Web.LayoutRenderers.AspNetLayoutRendererBase.Append(StringBuilder builder, LogEventInfo logEvent)
+   at NLog.LayoutRenderers.LayoutRenderer.RenderAppendBuilder(LogEventInfo logEvent, StringBuilder builder)
+2020-07-27 11:04:34.2004 Info Message Template Auto Format enabled
+2020-07-27 11:04:34.2374 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 11:04:34.4475 Info Adding target FileTarget(Name=allfile)
+2020-07-27 11:04:34.5361 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 11:04:34.6952 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 11:09:53.2737 Info Message Template Auto Format enabled
+2020-07-27 11:09:53.3023 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 11:09:53.3899 Info Adding target FileTarget(Name=allfile)
+2020-07-27 11:09:53.4119 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 11:09:53.6025 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 11:39:13.9892 Info Message Template Auto Format enabled
+2020-07-27 11:39:14.0161 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 11:39:14.0855 Info Adding target FileTarget(Name=allfile)
+2020-07-27 11:39:14.1053 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 11:39:14.2814 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 11:41:18.4042 Info Message Template Auto Format enabled
+2020-07-27 11:41:18.4469 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 11:41:18.5616 Info Adding target FileTarget(Name=allfile)
+2020-07-27 11:41:18.5826 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 11:41:18.7526 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 11:44:04.7675 Info Message Template Auto Format enabled
+2020-07-27 11:44:04.7957 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 11:44:04.8997 Info Adding target FileTarget(Name=allfile)
+2020-07-27 11:44:04.9360 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 11:44:05.0986 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 11:48:28.1869 Info Message Template Auto Format enabled
+2020-07-27 11:48:28.2337 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 11:48:28.4330 Info Adding target FileTarget(Name=allfile)
+2020-07-27 11:48:28.4626 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 11:48:28.6620 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 12:17:56.3432 Info Message Template Auto Format enabled
+2020-07-27 12:17:56.3901 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 12:17:56.5493 Info Adding target FileTarget(Name=allfile)
+2020-07-27 12:17:56.7047 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 12:17:56.9460 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 12:24:13.8761 Info Message Template Auto Format enabled
+2020-07-27 12:24:13.9798 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 12:24:14.3699 Info Adding target FileTarget(Name=allfile)
+2020-07-27 12:24:14.4203 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 12:24:14.5870 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
