@@ -12,7 +12,7 @@ pool:
 variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  solutionPath: 'src/IdentityProvider.sln'
+  solutionPath: 'src/banklytask.identityprovider.sln'
 
 
 steps:
