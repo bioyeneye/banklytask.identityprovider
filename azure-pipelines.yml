@@ -13,7 +13,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   solutionPath: 'src/banklytask.identityprovider.sln'
-  testPath: 'src/banklytask.identityprovider.test/banklytask.identityprovider.test.csproj'
+  testPath: 'src/IdentityProvider.Test/IdentityProvider.Test.csproj'
 
 
 steps:
