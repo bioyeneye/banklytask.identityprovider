@@ -1,11 +1,18 @@
-src/banklytask.identityprovider/bin/
-src/banklytask.identityprovider/obj/
+src/IdentityProvider/bin/
+src/IdentityProvider/obj/
 obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
 
-src/banklytask.identityprovider.test/bin/
-src/banklytask.identityprovider.test/obj/
+src/IdentityProvider.Test/bin/
+src/IdentityProvider.Test/obj/
 
-src/.idea/
+src/IdentityProvider.DataAccess/bin/
+src/IdentityProvider.DataAccess/obj/
+
+src/IdentityProvider.BusinessDomain/bin/
+src/IdentityProvider.BusinessDomain/obj/
+
+src/.idea/*
+src/IdentityProvider/.idea/*
