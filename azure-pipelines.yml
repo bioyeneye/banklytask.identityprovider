@@ -13,6 +13,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   solutionPath: 'src/banklytask.identityprovider.sln'
+  testPath: 'src/banklytask.identityprovider.test/banklytask.identityprovider.test.csproj'
 
 
 steps:
@@ -29,7 +30,14 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+# - task: VSTest@2
+#   inputs:
+#     platform: '$(buildPlatform)'
+#     configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'test Project'
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: test
+    projects: '$(testPath)'
+    arguments: '--configuration $(buildConfiguration)'
