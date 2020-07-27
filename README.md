@@ -2,7 +2,15 @@
 
 ### Setup
 
+#### Setup - Build project and restore packages 
+
+```
+cd src 
+dotnet build 
+```
+
 #### Setup - Database Initialization 
+##### Change the ApplicationDbContext connection string in appsettings.json to match your msqlserver connection
 
 ```
 cd src 
