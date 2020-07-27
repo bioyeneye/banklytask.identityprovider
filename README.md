@@ -18,3 +18,6 @@ dotnet ef database update -c ApplicationDbContext -s IdentityProvider
 dotnet ef database update -c PersistedGrantDbContext -s IdentityProvider
 dotnet ef database update -c ConfigurationDbContext -s IdentityProvider
 ```
+
+#### Setup - Database Seed 
+##### Change the Config.cs detail in the IdentityProvider project to seed the database
