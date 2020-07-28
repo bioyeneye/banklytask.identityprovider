@@ -7,3 +7,23 @@
 2020-07-27 20:03:09.7168 Info Adding target FileTarget(Name=ownFile-web)
 2020-07-27 20:03:09.8340 Info Closing old configuration.
 2020-07-27 20:03:10.2181 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-27 23:18:37.6350 Info Message Template Auto Format enabled
+2020-07-27 23:18:37.6605 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-27 23:18:37.7674 Info Adding target FileTarget(Name=allfile)
+2020-07-27 23:18:37.7700 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-27 23:18:37.9709 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-28 01:17:06.6251 Info Message Template Auto Format enabled
+2020-07-28 01:17:06.6530 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-28 01:17:06.7334 Info Adding target FileTarget(Name=allfile)
+2020-07-28 01:17:06.7530 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-28 01:17:06.9163 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-28 01:22:14.5659 Info Message Template Auto Format enabled
+2020-07-28 01:22:14.6258 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-28 01:22:14.7126 Info Adding target FileTarget(Name=allfile)
+2020-07-28 01:22:14.7385 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-28 01:22:14.8855 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config
+2020-07-28 01:38:18.8041 Info Message Template Auto Format enabled
+2020-07-28 01:38:18.8509 Info Loading assembly: NLog.Web.AspNetCore
+2020-07-28 01:38:18.9985 Info Adding target FileTarget(Name=allfile)
+2020-07-28 01:38:19.0335 Info Adding target FileTarget(Name=ownFile-web)
+2020-07-28 01:38:19.2372 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=45, FilePath=/Users/oyeneyebolaji/RiderProjects/bankly/src/IdentityProvider/bin/Debug/netcoreapp3.1/nlog.config

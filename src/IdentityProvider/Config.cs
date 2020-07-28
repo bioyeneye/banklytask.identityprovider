@@ -44,6 +44,7 @@ namespace IdentityProvider
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
+                        "roles",
                         "complaint_service.api.read", "complaint_service.api.write"
                     },
                     
@@ -77,8 +78,8 @@ namespace IdentityProvider
                 new IdentityResources.Email(),
                 new IdentityResource
                 {
-                    Name = "role",
-                    UserClaims = new List<string> {"role"}
+                    Name = "roles",
+                    UserClaims = new List<string> {"roles"}
                 }
             };
         }

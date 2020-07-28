@@ -104,7 +104,9 @@ namespace IdentityProvider.BusinessDomain.Services.Authentication
             {
                 foreach (var role in roles)
                 {
+                    claims.Add(new Claim(ClaimsIdentity.DefaultRoleClaimType, role));
                     claims.Add(new Claim(JwtClaimTypes.Role, role));
+                    claims.Add(new Claim(ClaimTypes.Role, role));
                 }
             }
 
